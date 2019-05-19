@@ -1,7 +1,7 @@
 
 # cdk-fluentd-log-driver
 
-![Build Status](https://travis-ci.org/cohalz/cdk-fluentd-log-driver.png?branch=master)]
+![Build Status](https://travis-ci.org/cohalz/cdk-fluentd-log-driver.png?branch=master)
 
 ## Synopsis
 
