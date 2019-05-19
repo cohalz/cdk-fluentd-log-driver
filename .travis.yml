@@ -4,5 +4,5 @@ node_js:
   - 'stable'
   - 'lts/*'
 script:
-  - yarn test --ci
+  - yarn test
   - yarn lint
