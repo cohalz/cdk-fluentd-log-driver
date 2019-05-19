@@ -3,6 +3,8 @@
 
 ![Build Status](https://travis-ci.org/cohalz/cdk-fluentd-log-driver.png?branch=master)
 
+cdk-fluentd-log-driver provides helper function that uses fluentd log driver to your ECS task definition.
+
 ## Synopsis
 
 ```typescript
@@ -12,15 +14,15 @@ import { Stack } from "@aws-cdk/cdk";
 
 const stack = new Stack()
 const taskDefinition = new Ec2TaskDefinition(stack, "TaskDefinition")
-const fluentdLogDriver = new FluentdLogDriver(stack, "fluentd-log-driver", {
-  fluentdAddress: "127.0.0.1:24224",
-})
 
 taskDefinition.addContainer("Container", {
   image: ContainerImage.fromRegistry("/aws/aws-example-app"),
-  logging: fluentdLogDriver,
   memoryLimitMiB: 2048,
+  // Use a fluentd driver
+  logging: new FluentdLogDriver(stack, "fluentd-log-driver", {
+    fluentdAddress: "127.0.0.1:24224",
+  }),
 })
 ```
 
-[aws-cdk]: https://github.com/awslabs/aws-cdk
+For available options, please refer to the [docker docs](https://docs.docker.com/config/containers/logging/fluentd/#options).

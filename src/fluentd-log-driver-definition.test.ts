@@ -7,6 +7,7 @@ describe("FluentdLogDriverDefinition", () => {
   test("default", () => {
     const stack = new Stack()
     const taskDefinition = new Ec2TaskDefinition(stack, "TaskDefinition")
+
     const logDriver = new FluentdLogDriver(stack, "fluentd-log-driver")
 
     taskDefinition.addContainer("Container", {
@@ -21,6 +22,7 @@ describe("FluentdLogDriverDefinition", () => {
   test("can set fluentd-address", () => {
     const stack = new Stack()
     const taskDefinition = new Ec2TaskDefinition(stack, "TaskDefinition")
+
     const logDriver = new FluentdLogDriver(stack, "fluentd-log-driver", {
       fluentdAddress: "127.0.0.1:24224",
     })
@@ -37,6 +39,7 @@ describe("FluentdLogDriverDefinition", () => {
   test("can set all options", () => {
     const stack = new Stack()
     const taskDefinition = new Ec2TaskDefinition(stack, "TaskDefinition")
+
     const logDriver = new FluentdLogDriver(stack, "fluentd-log-driver", {
       env: "env",
       envRegex: "^(os|customer).",
