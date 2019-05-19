@@ -18,7 +18,7 @@ const taskDefinition = new Ec2TaskDefinition(stack, "TaskDefinition")
 taskDefinition.addContainer("Container", {
   image: ContainerImage.fromRegistry("/aws/aws-example-app"),
   memoryLimitMiB: 2048,
-  // Use a fluentd driver
+  // Use a fluentd log driver
   logging: new FluentdLogDriver(stack, "fluentd-log-driver", {
     fluentdAddress: "127.0.0.1:24224",
   }),
