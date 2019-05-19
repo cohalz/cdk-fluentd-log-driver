@@ -1,0 +1,244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FluentdLogDriverDefinition can set all options 1`] = `
+Object {
+  "Resources": Object {
+    "TaskDefinitionB36D86D9": Object {
+      "Properties": Object {
+        "ContainerDefinitions": Array [
+          Object {
+            "Essential": true,
+            "Image": "/aws/aws-example-app",
+            "Links": Array [],
+            "LinuxParameters": Object {
+              "Capabilities": Object {
+                "Add": Array [],
+                "Drop": Array [],
+              },
+              "Devices": Array [],
+              "Tmpfs": Array [],
+            },
+            "LogConfiguration": Object {
+              "LogDriver": "fluentd",
+              "Options": Object {
+                "env": "labels",
+                "env-regex": "^(os|customer).",
+                "fluentd-address": "127.0.0.1:24224",
+                "fluentd-async-connect": "true",
+                "fluentd-buffer-limit": "8MB",
+                "fluentd-max-retries": "20",
+                "fluentd-retry-wait": "2",
+                "fluentd-sub-second-precision": "true",
+                "labels": "labels",
+                "tag": "tag",
+              },
+            },
+            "Memory": 2048,
+            "MountPoints": Array [],
+            "Name": "Container",
+            "PortMappings": Array [],
+            "Ulimits": Array [],
+            "VolumesFrom": Array [],
+          },
+        ],
+        "Family": "TaskDefinition",
+        "NetworkMode": "bridge",
+        "PlacementConstraints": Array [],
+        "RequiresCompatibilities": Array [
+          "EC2",
+        ],
+        "TaskRoleArn": Object {
+          "Fn::GetAtt": Array [
+            "TaskDefinitionTaskRoleFD40A61D",
+            "Arn",
+          ],
+        },
+        "Volumes": Array [],
+      },
+      "Type": "AWS::ECS::TaskDefinition",
+    },
+    "TaskDefinitionTaskRoleFD40A61D": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "ecs-tasks.",
+                      Object {
+                        "Ref": "AWS::URLSuffix",
+                      },
+                    ],
+                  ],
+                },
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::IAM::Role",
+    },
+  },
+}
+`;
+
+exports[`FluentdLogDriverDefinition can set fluentd-address 1`] = `
+Object {
+  "Resources": Object {
+    "TaskDefinitionB36D86D9": Object {
+      "Properties": Object {
+        "ContainerDefinitions": Array [
+          Object {
+            "Essential": true,
+            "Image": "/aws/aws-example-app",
+            "Links": Array [],
+            "LinuxParameters": Object {
+              "Capabilities": Object {
+                "Add": Array [],
+                "Drop": Array [],
+              },
+              "Devices": Array [],
+              "Tmpfs": Array [],
+            },
+            "LogConfiguration": Object {
+              "LogDriver": "fluentd",
+              "Options": Object {
+                "fluentd-address": "127.0.0.1:24224",
+              },
+            },
+            "Memory": 2048,
+            "MountPoints": Array [],
+            "Name": "Container",
+            "PortMappings": Array [],
+            "Ulimits": Array [],
+            "VolumesFrom": Array [],
+          },
+        ],
+        "Family": "TaskDefinition",
+        "NetworkMode": "bridge",
+        "PlacementConstraints": Array [],
+        "RequiresCompatibilities": Array [
+          "EC2",
+        ],
+        "TaskRoleArn": Object {
+          "Fn::GetAtt": Array [
+            "TaskDefinitionTaskRoleFD40A61D",
+            "Arn",
+          ],
+        },
+        "Volumes": Array [],
+      },
+      "Type": "AWS::ECS::TaskDefinition",
+    },
+    "TaskDefinitionTaskRoleFD40A61D": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "ecs-tasks.",
+                      Object {
+                        "Ref": "AWS::URLSuffix",
+                      },
+                    ],
+                  ],
+                },
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::IAM::Role",
+    },
+  },
+}
+`;
+
+exports[`FluentdLogDriverDefinition default 1`] = `
+Object {
+  "Resources": Object {
+    "TaskDefinitionB36D86D9": Object {
+      "Properties": Object {
+        "ContainerDefinitions": Array [
+          Object {
+            "Essential": true,
+            "Image": "/aws/aws-example-app",
+            "Links": Array [],
+            "LinuxParameters": Object {
+              "Capabilities": Object {
+                "Add": Array [],
+                "Drop": Array [],
+              },
+              "Devices": Array [],
+              "Tmpfs": Array [],
+            },
+            "LogConfiguration": Object {
+              "LogDriver": "fluentd",
+            },
+            "Memory": 2048,
+            "MountPoints": Array [],
+            "Name": "Container",
+            "PortMappings": Array [],
+            "Ulimits": Array [],
+            "VolumesFrom": Array [],
+          },
+        ],
+        "Family": "TaskDefinition",
+        "NetworkMode": "bridge",
+        "PlacementConstraints": Array [],
+        "RequiresCompatibilities": Array [
+          "EC2",
+        ],
+        "TaskRoleArn": Object {
+          "Fn::GetAtt": Array [
+            "TaskDefinitionTaskRoleFD40A61D",
+            "Arn",
+          ],
+        },
+        "Volumes": Array [],
+      },
+      "Type": "AWS::ECS::TaskDefinition",
+    },
+    "TaskDefinitionTaskRoleFD40A61D": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "ecs-tasks.",
+                      Object {
+                        "Ref": "AWS::URLSuffix",
+                      },
+                    ],
+                  ],
+                },
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::IAM::Role",
+    },
+  },
+}
+`;
