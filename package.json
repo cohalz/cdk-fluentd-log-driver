@@ -35,7 +35,6 @@
     "@aws-cdk/aws-cloudformation": "0.31.0",
     "@aws-cdk/aws-cloudwatch": "0.31.0",
     "@aws-cdk/aws-codedeploy-api": "0.31.0",
-    "@aws-cdk/aws-codepipeline-api": "0.28.0",
     "@aws-cdk/aws-ec2": "0.31.0",
     "@aws-cdk/aws-ecr": "0.31.0",
     "@aws-cdk/aws-ecs": "0.31.0",
