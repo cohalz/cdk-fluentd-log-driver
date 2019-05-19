@@ -1,6 +1,8 @@
 
 # cdk-fluentd-log-driver
 
+[![Build Status](https://travis-ci.org/cohalz/cdk-fluentd-log-driver.png?branch=master)][travis]
+
 :warning: This library is still experimental because underlying [AWS CDK][aws-cdk] is in developer preview release.
 
 ## Synopsis
