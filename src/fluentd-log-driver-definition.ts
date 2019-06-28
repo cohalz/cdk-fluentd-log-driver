@@ -1,5 +1,5 @@
-import { CfnTaskDefinition, LogDriver } from "@aws-cdk/aws-ecs"
-import { Construct } from "@aws-cdk/cdk"
+import { CfnTaskDefinition, LogDriver, LogDriverConfig } from "@aws-cdk/aws-ecs"
+import { Construct } from "@aws-cdk/core"
 
 /**
  * Properties for defining a new Fluentd Log Driver
@@ -27,42 +27,33 @@ export class FluentdLogDriver extends LogDriver {
     id: string,
     private readonly props?: FluentdLogDriverProps
   ) {
-    super(scope, id)
+    super()
   }
 
   /**
    * Called when the log driver is configured on a container
    */
-  public bind(): void {
-    return
-  }
-
-  /**
-   * Return the log driver CloudFormation JSON
-   */
-  public renderLogDriver(): CfnTaskDefinition.LogConfigurationProperty {
+  public bind(): LogDriverConfig {
     if (this.props === undefined) {
       return {
         logDriver: "fluentd",
       }
     }
 
-    const options = removeEmpty({
-      env: this.props.labels,
-      "env-regex": this.props.envRegex,
-      "fluentd-address": this.props.fluentdAddress,
-      "fluentd-async-connect": this.props.fluentdAsyncConnect,
-      "fluentd-buffer-limit": this.props.fluentdBufferLimit,
-      "fluentd-max-retries": this.props.fluentdMaxRetries,
-      "fluentd-retry-wait": this.props.fluentdRetryWait,
-      "fluentd-sub-second-precision": this.props.fluentdSubSecondPrecision,
-      labels: this.props.labels,
-      tag: this.props.tag,
-    })
-
     return {
       logDriver: "fluentd",
-      options,
+      options: removeEmpty({
+        env: this.props.labels,
+        "env-regex": this.props.envRegex,
+        "fluentd-address": this.props.fluentdAddress,
+        "fluentd-async-connect": this.props.fluentdAsyncConnect,
+        "fluentd-buffer-limit": this.props.fluentdBufferLimit,
+        "fluentd-max-retries": this.props.fluentdMaxRetries,
+        "fluentd-retry-wait": this.props.fluentdRetryWait,
+        "fluentd-sub-second-precision": this.props.fluentdSubSecondPrecision,
+        labels: this.props.labels,
+        tag: this.props.tag,
+      }),
     }
   }
 }

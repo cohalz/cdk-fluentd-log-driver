@@ -1,6 +1,6 @@
 import { SynthUtils } from "@aws-cdk/assert"
 import { ContainerImage, Ec2TaskDefinition } from "@aws-cdk/aws-ecs"
-import { Stack } from "@aws-cdk/cdk"
+import { Stack } from "@aws-cdk/core"
 import { FluentdLogDriver } from "./fluentd-log-driver-definition"
 
 describe("FluentdLogDriverDefinition", () => {
