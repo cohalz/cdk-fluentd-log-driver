@@ -8,7 +8,7 @@ describe("FluentdLogDriverDefinition", () => {
     const stack = new Stack()
     const taskDefinition = new Ec2TaskDefinition(stack, "TaskDefinition")
 
-    const logDriver = new FluentdLogDriver(stack, "fluentd-log-driver")
+    const logDriver = new FluentdLogDriver()
 
     taskDefinition.addContainer("Container", {
       image: ContainerImage.fromRegistry("/aws/aws-example-app"),
@@ -23,7 +23,7 @@ describe("FluentdLogDriverDefinition", () => {
     const stack = new Stack()
     const taskDefinition = new Ec2TaskDefinition(stack, "TaskDefinition")
 
-    const logDriver = new FluentdLogDriver(stack, "fluentd-log-driver", {
+    const logDriver = new FluentdLogDriver({
       fluentdAddress: "127.0.0.1:24224",
     })
 
@@ -40,7 +40,7 @@ describe("FluentdLogDriverDefinition", () => {
     const stack = new Stack()
     const taskDefinition = new Ec2TaskDefinition(stack, "TaskDefinition")
 
-    const logDriver = new FluentdLogDriver(stack, "fluentd-log-driver", {
+    const logDriver = new FluentdLogDriver({
       env: "env",
       envRegex: "^(os|customer).",
       fluentdAddress: "127.0.0.1:24224",

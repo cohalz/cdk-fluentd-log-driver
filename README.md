@@ -15,13 +15,18 @@ import { Stack } from "@aws-cdk/cdk";
 const stack = new Stack()
 const taskDefinition = new Ec2TaskDefinition(stack, "TaskDefinition")
 
+const logDriver = new FluentdLogDriver({
+  fluentdAddress: "127.0.0.1:24224",
+  fluentdMaxRetries: "3",
+  fluentdRetryWait: "2",
+  tag: "tag",
+})
+
 taskDefinition.addContainer("Container", {
   image: ContainerImage.fromRegistry("/aws/aws-example-app"),
   memoryLimitMiB: 2048,
   // Use a fluentd log driver
-  logging: new FluentdLogDriver(stack, "fluentd-log-driver", {
-    fluentdAddress: "127.0.0.1:24224",
-  }),
+  logging: logDriver,
 })
 ```
 
