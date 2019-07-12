@@ -22,11 +22,7 @@ export interface FluentdLogDriverProps {
  * A log driver that will log to the Fluentd collector
  */
 export class FluentdLogDriver extends LogDriver {
-  constructor(
-    scope: Construct,
-    id: string,
-    private readonly props?: FluentdLogDriverProps
-  ) {
+  constructor(private readonly props?: FluentdLogDriverProps) {
     super()
   }
 
