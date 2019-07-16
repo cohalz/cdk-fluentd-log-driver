@@ -8,9 +8,9 @@ cdk-fluentd-log-driver provides helper function that uses fluentd log driver to 
 ## Synopsis
 
 ```typescript
+import { ContainerImage, Ec2TaskDefinition } from "@aws-cdk/aws-ecs"
+import { Stack } from "@aws-cdk/core";
 import { FluentdLogDriver } from "@cohalz/cdk-fluentd-log-driver";
-import { Ec2TaskDefinition } from "@aws-cdk/aws-ecs";
-import { Stack } from "@aws-cdk/cdk";
 
 const stack = new Stack()
 const taskDefinition = new Ec2TaskDefinition(stack, "TaskDefinition")
