@@ -1,5 +1,4 @@
-import { CfnTaskDefinition, LogDriver, LogDriverConfig } from "@aws-cdk/aws-ecs"
-import { Construct } from "@aws-cdk/core"
+import { LogDriver, LogDriverConfig } from "@aws-cdk/aws-ecs"
 
 /**
  * Properties for defining a new Fluentd Log Driver

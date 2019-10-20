@@ -9,7 +9,6 @@ Object {
           Object {
             "Essential": true,
             "Image": "/aws/aws-example-app",
-            "Links": Array [],
             "LogConfiguration": Object {
               "LogDriver": "fluentd",
               "Options": Object {
@@ -26,11 +25,7 @@ Object {
               },
             },
             "Memory": 2048,
-            "MountPoints": Array [],
             "Name": "Container",
-            "PortMappings": Array [],
-            "Ulimits": Array [],
-            "VolumesFrom": Array [],
           },
         ],
         "Family": "TaskDefinition",
@@ -44,7 +39,6 @@ Object {
             "Arn",
           ],
         },
-        "Volumes": Array [],
       },
       "Type": "AWS::ECS::TaskDefinition",
     },
@@ -56,17 +50,7 @@ Object {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
               "Principal": Object {
-                "Service": Object {
-                  "Fn::Join": Array [
-                    "",
-                    Array [
-                      "ecs-tasks.",
-                      Object {
-                        "Ref": "AWS::URLSuffix",
-                      },
-                    ],
-                  ],
-                },
+                "Service": "ecs-tasks.amazonaws.com",
               },
             },
           ],
@@ -88,7 +72,6 @@ Object {
           Object {
             "Essential": true,
             "Image": "/aws/aws-example-app",
-            "Links": Array [],
             "LogConfiguration": Object {
               "LogDriver": "fluentd",
               "Options": Object {
@@ -96,11 +79,7 @@ Object {
               },
             },
             "Memory": 2048,
-            "MountPoints": Array [],
             "Name": "Container",
-            "PortMappings": Array [],
-            "Ulimits": Array [],
-            "VolumesFrom": Array [],
           },
         ],
         "Family": "TaskDefinition",
@@ -114,7 +93,6 @@ Object {
             "Arn",
           ],
         },
-        "Volumes": Array [],
       },
       "Type": "AWS::ECS::TaskDefinition",
     },
@@ -126,17 +104,7 @@ Object {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
               "Principal": Object {
-                "Service": Object {
-                  "Fn::Join": Array [
-                    "",
-                    Array [
-                      "ecs-tasks.",
-                      Object {
-                        "Ref": "AWS::URLSuffix",
-                      },
-                    ],
-                  ],
-                },
+                "Service": "ecs-tasks.amazonaws.com",
               },
             },
           ],
@@ -158,16 +126,11 @@ Object {
           Object {
             "Essential": true,
             "Image": "/aws/aws-example-app",
-            "Links": Array [],
             "LogConfiguration": Object {
               "LogDriver": "fluentd",
             },
             "Memory": 2048,
-            "MountPoints": Array [],
             "Name": "Container",
-            "PortMappings": Array [],
-            "Ulimits": Array [],
-            "VolumesFrom": Array [],
           },
         ],
         "Family": "TaskDefinition",
@@ -181,7 +144,6 @@ Object {
             "Arn",
           ],
         },
-        "Volumes": Array [],
       },
       "Type": "AWS::ECS::TaskDefinition",
     },
@@ -193,17 +155,7 @@ Object {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
               "Principal": Object {
-                "Service": Object {
-                  "Fn::Join": Array [
-                    "",
-                    Array [
-                      "ecs-tasks.",
-                      Object {
-                        "Ref": "AWS::URLSuffix",
-                      },
-                    ],
-                  ],
-                },
+                "Service": "ecs-tasks.amazonaws.com",
               },
             },
           ],
