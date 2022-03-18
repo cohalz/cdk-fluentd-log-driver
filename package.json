@@ -24,7 +24,7 @@
     "prepublish": "run-s clean build"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.45.0",
+    "@aws-cdk/assert": "2.17.0",
     "@aws-cdk/aws-ecs": "1.45.0",
     "@aws-cdk/core": "1.45.0",
     "@types/jest": "27.4.1",
